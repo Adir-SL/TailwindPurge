@@ -1,5 +1,6 @@
 function twpurge(){
     window.tailwindClasses = "";
+    window.saveRules = "";
     document.body.innerHTML += '<link href="tailwind.css" rel="stylesheet">';
     var x = document.body.querySelectorAll("*");
     var i;
@@ -20,13 +21,15 @@ function filterArray(a) {
     });   
 }
 function matchTailwind(t){
-    // console.log(t);
     twrules = document.styleSheets[document.styleSheets.length-1].cssRules;
     var x = twrules;
     var i;
     for (i = 0; i < x.length; i++) {
-        if("."+t == x[i].selectorText){console.log(t);}
+        if("."+t == x[i].selectorText){
+            window.saveRules += x[i].cssText+"\n";
+        }
     }
+    console.log(window.saveRules);
 }
 
 function findTailwind(){
