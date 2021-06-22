@@ -1,5 +1,6 @@
 function twpurge(){
     window.tailwindClasses = "";
+    document.body.innerHTML += '<link href="tailwind.css" rel="stylesheet">';
     var x = document.body.querySelectorAll("*");
     var i;
     for (i = 0; i < x.length; i++) {
@@ -17,4 +18,21 @@ function filterArray(a) {
     return a.filter(function(item) {
         return seen.hasOwnProperty(item) ? false : (seen[item] = true);
     });   
+}
+function matchTailwind(t){
+    // console.log(t);
+    twrules = document.styleSheets[document.styleSheets.length-1].cssRules;
+    var x = twrules;
+    var i;
+    for (i = 0; i < x.length; i++) {
+        if("."+t == x[i].selectorText){console.log(t);}
+    }
+}
+
+function findTailwind(){
+    var x = window.tailwindFilter;
+    var i;
+    for (i = 0; i < x.length; i++) {
+        matchTailwind(x[i]);
+    }
 }
