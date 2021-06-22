@@ -1,4 +1,4 @@
-function tailwind(){
+function twpurge(){
     window.tailwindClasses = "";
     var x = document.body.querySelectorAll("*");
     var i;
