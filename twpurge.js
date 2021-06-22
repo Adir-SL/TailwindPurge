@@ -10,7 +10,7 @@ function twpurge(){
     }
     window.tailwindArray = window.tailwindClasses.split(" ");
     window.tailwindFilter = filterArray(window.tailwindArray);
-    setTimeout(function(){ findTailwind(); }, 300);
+    setTimeout(function(){ findTailwind(); }, 100);
 }
 
 function filterArray(a) {
