@@ -8,17 +8,16 @@ function twpurge(){
         window.tailwindClasses += x[i].classList;
         window.tailwindClasses += " ";
     }
-    // console.log(window.tailwindClasses);
     window.tailwindArray = window.tailwindClasses.split(" ");
     window.tailwindFilter = filterArray(window.tailwindArray);
-    console.log(window.tailwindFilter);
+    setTimeout(function(){ findTailwind(); }, 300);
 }
 
 function filterArray(a) {
     var seen = {};
     return a.filter(function(item) {
         return seen.hasOwnProperty(item) ? false : (seen[item] = true);
-    });   
+    });
 }
 function matchTailwind(t){
     twrules = document.styleSheets[document.styleSheets.length-1].cssRules;
@@ -29,7 +28,6 @@ function matchTailwind(t){
             window.saveRules += x[i].cssText+"\n";
         }
     }
-    console.log(window.saveRules);
 }
 
 function findTailwind(){
@@ -38,4 +36,5 @@ function findTailwind(){
     for (i = 0; i < x.length; i++) {
         matchTailwind(x[i]);
     }
+    console.log(window.saveRules);
 }
