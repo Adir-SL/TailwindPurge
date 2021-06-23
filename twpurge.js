@@ -26,10 +26,7 @@ function matchTailwind(t){
     var x = twrules;
     var i;
     for (i = 0; i < x.length; i++) {
-        if(t.toLowerCase() == x[i].selectorText){
-            window.saveRules += x[i].cssText+"\n";
-        }
-        if("."+t == x[i].selectorText){
+        if(t.toLowerCase() == x[i].selectorText || "."+t == x[i].selectorText){
             window.saveRules += x[i].cssText+"\n";
         }
     }
