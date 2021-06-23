@@ -5,10 +5,7 @@ function twpurge(){
     var x = document.querySelectorAll("*");
     var i;
     for (i = 0; i < x.length; i++) {
-        window.tailwindClasses += x[i].classList;
-        window.tailwindClasses += " ";
-        window.tailwindClasses += x[i].tagName;
-        window.tailwindClasses += " ";
+        window.tailwindClasses += x[i].classList + " " + x[i].tagName + " ";
     }
     window.tailwindArray = window.tailwindClasses.split(" ");
     window.tailwindFilter = filterArray(window.tailwindArray);
