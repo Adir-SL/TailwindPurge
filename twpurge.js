@@ -47,3 +47,8 @@ function saveStyles(){
     anchor.dataset.downloadurl = ['text/plain', anchor.download, anchor.href].join(':');
     anchor.click();
 }
+
+function addButtons(){
+    document.body.innerHTML += "<div onclick='twpurge();' style='position:absolute;top:0;left:0;background-color:lightgray;padding:8px 32px;margin:12px;cursor:pointer;border-radius:4px;z-index:999999999999;'>Purge Tailwind</div>";
+}
+addButtons();
