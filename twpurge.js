@@ -49,6 +49,9 @@ function saveStyles(){
 }
 
 function addButtons(){
-    document.body.innerHTML += "<div onclick='twpurge();' style='position:absolute;top:0;left:0;background-color:lightgray;padding:8px 32px;margin:12px;cursor:pointer;border-radius:4px;z-index:999999999999;'>Purge Tailwind</div>";
+    document.body.innerHTML += "<div onclick='twpurge();' style='position:absolute;top:0;left:0;background-color:lightgray;padding:8px 32px;margin:12px;cursor:pointer;border-radius:4px;z-index:999999999999;'>Save CSS file</div>";
 }
-addButtons();
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    addButtons();
+});
