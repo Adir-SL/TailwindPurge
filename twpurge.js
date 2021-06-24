@@ -33,6 +33,10 @@ function findTailwind(){
     var x = window.tailwindFilter;
     var i;
     for (i = 0; i < x.length; i++) {
+        if(x[i].indexOf(":") > -1){
+            x[i] = x[i].slice(x[i].indexOf(":")+1);
+            console.log(x[i]);
+        }
         matchTailwind(x[i]);
     }
     console.log(window.saveRules);
