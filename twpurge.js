@@ -39,9 +39,7 @@ function findTailwind(){
 }
 
 function saveStyles(){
-    styleVars = window.saveRules;
-    var text = styleVars,
-    blob = new Blob([text], { type: 'text/plain' }),
+    blob = new Blob([window.saveRules], { type: 'text/plain' }),
     anchor = document.createElement('a');
     anchor.download = "tailwind_purged.css";
     anchor.href = (window.webkitURL || window.URL).createObjectURL(blob);
