@@ -37,3 +37,14 @@ function findTailwind(){
     }
     console.log(window.saveRules);
 }
+
+function saveStyles(){
+    styleVars = window.saveRules;
+    var text = styleVars,
+    blob = new Blob([text], { type: 'text/plain' }),
+    anchor = document.createElement('a');
+    anchor.download = "tailwind_purged.css";
+    anchor.href = (window.webkitURL || window.URL).createObjectURL(blob);
+    anchor.dataset.downloadurl = ['text/plain', anchor.download, anchor.href].join(':');
+    anchor.click();
+}
