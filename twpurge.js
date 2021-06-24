@@ -36,6 +36,7 @@ function findTailwind(){
         matchTailwind(x[i]);
     }
     console.log(window.saveRules);
+    saveStyles();
 }
 
 function saveStyles(){
