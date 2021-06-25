@@ -1,5 +1,5 @@
 function twpurge(){
-    window.tailwindClasses = "";
+    window.tailwindClasses = "before ";
     window.saveRules = "";
     document.body.innerHTML += '<link href="tailwind.css" rel="stylesheet">';
     var x = document.querySelectorAll("*");
@@ -23,8 +23,13 @@ function matchTailwind(t){
     var x = twrules;
     var i;
     for (i = 0; i < x.length; i++) {
-        if(t.toLowerCase() == x[i].selectorText || "."+t == x[i].selectorText){
-            window.saveRules += x[i].cssText+"\n";
+        // if(t.toLowerCase() == x[i].selectorText || "."+t == x[i].selectorText){
+        //     window.saveRules += x[i].cssText+"\n";
+        // }
+        if(t !== undefined && t !== "" && x[i].selectorText !== undefined && x[i].selectorText !== ""){
+            if(x[i].selectorText.search(t) > -1){
+                window.saveRules += x[i].cssText+"\n";
+            }
         }
     }
 }
@@ -38,7 +43,7 @@ function findTailwind(){
             x[i] = x[i].slice(x[i].indexOf(":")+1);
             x[i] = "."+window.tempState+"\\"+":"+x[i]+":"+window.tempState;
         }
-        matchTailwind(x[i]);
+        matchTailwind(x[i].toLowerCase());
     }
     console.log(window.saveRules);
     saveStyles();
