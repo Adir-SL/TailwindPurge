@@ -37,7 +37,6 @@ function findTailwind(){
     for (i = 0; i < x.length; i++) {
         if(x[i].indexOf(":") > -1){
             x[i] = x[i].slice(x[i].indexOf(":")+1);
-            // x[i] = "."+window.tempState+"\\"+":"+x[i]+":"+window.tempState;
         }
         matchTailwind(x[i].toLowerCase());
     }
