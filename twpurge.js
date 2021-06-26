@@ -23,9 +23,6 @@ function matchTailwind(t){
     var x = twrules;
     var i;
     for (i = 0; i < x.length; i++) {
-        // if(t.toLowerCase() == x[i].selectorText || "."+t == x[i].selectorText){
-        //     window.saveRules += x[i].cssText+"\n";
-        // }
         if(t !== undefined && t !== "" && x[i].selectorText !== undefined && x[i].selectorText !== ""){
             if(x[i].selectorText.search(t) > -1){
                 window.saveRules += x[i].cssText+"\n";
