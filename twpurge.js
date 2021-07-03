@@ -1,7 +1,7 @@
 function twpurge(){
     window.tailwindClasses = "before ";
     window.saveRules = "";
-    document.body.innerHTML += '<link href="tailwind.css" rel="stylesheet">';
+    document.body.innerHTML += '<link href="https://adir-sl.github.io/TailwindPurge/tailwind.css" rel="stylesheet">';
     var x = document.querySelectorAll("*");
     var i;
     for (i = 0; i < x.length; i++) {
