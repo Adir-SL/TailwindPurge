@@ -1,5 +1,7 @@
 # TailwindPurge
-<p style="color:red;">This project is still under development, use it with caution!</p>
+```diff
+- This project is still under development, use it with caution!
+```
 
 This makes it easy to purge Tailwind.css faster, without needing to go through NPM and such.
 
